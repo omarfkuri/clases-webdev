@@ -3,130 +3,58 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Selectores avanzados</title>
+	<title>Emmet</title>
 </head>
 <body>
-	<div class="contenedor">
-		<div class="arriba">
-			<div id="titulo">
-				Mi menú
-			</div>
-			<div class="descripcion">
-				Lorem, ipsum dolor sit amet.
-			</div>
-			<button class="indicador abierto">
-				+
-			</button>
-			<a href="/" title="Cargar" class="link">Link</a>
-			<a href="/" title="Buscar" class="link">Link 2</a>
-		</div>
-		<div class="menu">
-			<div class="item">
-				<div class="content">Item 1</div>
-			</div>
-			<div class="item">
-				<div class="content">Item 2</div>
-			</div>
-			<div class="item">
-				<div class="content">Item 3</div>
-			</div>
-			<div class="item">
-				<div class="content">Item 4</div>
-			</div>
-		</div>
+	
+	<!-- 
+	Emmet (incluido con VSCode)
+
+	Plugin que permite definir plantillas para
+	generar HTML o CSS más rápido.
+	-->
+	
+	<!-- div -->
+	<div></div>
+
+	<!-- div+input -->
+	<div></div>
+	<input type="text">
+
+	<!-- div*2 -->
+	<div></div>
+	<div></div>
+
+	<!-- div[attr=jajaja] -->
+	<div attr="jajaja"></div>
+
+	<!-- div>(input+button) -->
+	<div>
+		<input type="text">
+		<button></button>
 	</div>
+
+	<!-- .algo -->
+	<div class="algo"></div>
+
+	<!-- .algo.otra.cosa -->
+	<div class="algo otra cosa"></div>
+
+	<!-- #identificador -->
+	<div id="identificador"></div>
 
 	<style>
 		
-		/* Selector de clases */
-		.descripcion
+		.algo
 		{
-			color: red;
-		}
-		
-		/* Selector de clases combinadas */
-		.indicador.abierto
-		{
-			color: blue;
-		}
+			/*w100*/
+			width: 100px;
 
-		/* Selector de identificadores */
-		#titulo
-		{
-			border: 1px solid black;
-		}
-		
-		/* Selector de atributos */
-		[title="Cargar"]
-		{
-			color: purple;
-		}
-		
-		/* Selectores combinados */
-		a.link[title="Buscar"]
-		{
-			color: green;
-		}
-		
-		/* Mismas reglas para múltiples selectores */
-		div.menu,
-		div#titulo
-		{
-			color: lavender;
-		}
+			/*w100p*/
+			width: 100%;
 
-		/* Selectores de descendientes */
-		.menu .content
-		{
-			color: orange;
-		}
-
-		/* Selectores de hijos directos */
-		.menu > .item
-		{
-			border: 1px solid magenta;
-		}
-
-		/* Selectores de hermanos */
-		#titulo + .descripcion
-		{
-			border: 1px solid cyan;
-		}
-
-		/* 
-		Pseudo-clases: reglas que aplican dependiendo
-		del estado del elemento
-
-		Se indican como :nombre-pseudo-clase
-		*/
-
-		/* Cuando se pone el mouse sobre un elemento */
-		.item:hover
-		{
-			border: 5px solid lightgreen;
-		}
-
-		/* Cuando se hace click de un elemento */
-		.item:active
-		{
-			border: 5px solid lightblue;
-		}
-
-		/*
-		Pseudo-elementos: elementos que se pueden
-		agregar desde el CSS
-		*/
-
-		/* Se agrega un elemento antes del contenido del botón */
-		button::before
-		{
-			content: "antes";
-		}
-
-		/* Se agrega un elemento después del contenido del botón */
-		button::after
-		{
-			content: "después";
+			/*bd*/
+			border: 1px solid #000;
 		}
 
 	</style>
