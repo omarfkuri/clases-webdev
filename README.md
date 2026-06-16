@@ -24,3 +24,6 @@ Referencia de tecnologías web (HTML, CSS, JavaScript):
 - [MDN | Inglés](https://developer.mozilla.org/en-US/)
 - [MDN | Español](https://developer.mozilla.org/es/)
 
+Runtime de JavaScript
+- [Runtime](https://dev.to/rahmanmajeed/javascript-the-runtime-environment-35a2)
+
