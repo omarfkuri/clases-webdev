@@ -3,45 +3,132 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Clases e identificadores</title>
+	<title>Selectores avanzados</title>
 </head>
 <body>
-	<div>
-		
-		<!-- Los identificadores le dan un nombre único a un elemento. -->
-		<div id="uno">Hola</div>
-		
-		<!-- Las clases agrupan varios elementos bajo una propiedad compartida. -->
-		<div class="caja">Caja uno</div>
-
-		<!-- Pueden tener más de una clase -->
-		<div class="caja abierta">Caja dos</div>
-
+	<div class="contenedor">
+		<div class="arriba">
+			<div id="titulo">
+				Mi menú
+			</div>
+			<div class="descripcion">
+				Lorem, ipsum dolor sit amet.
+			</div>
+			<button class="indicador abierto">
+				+
+			</button>
+			<a href="/" title="Cargar" class="link">Link</a>
+			<a href="/" title="Buscar" class="link">Link 2</a>
+		</div>
+		<div class="menu">
+			<div class="item">
+				<div class="content">Item 1</div>
+			</div>
+			<div class="item">
+				<div class="content">Item 2</div>
+			</div>
+			<div class="item">
+				<div class="content">Item 3</div>
+			</div>
+			<div class="item">
+				<div class="content">Item 4</div>
+			</div>
+		</div>
 	</div>
 
 	<style>
-
-		/* Elige el elemento con el identificador "uno". */
-		#uno
+		
+		/* Selector de clases */
+		.descripcion
+		{
+			color: red;
+		}
+		
+		/* Selector de clases combinadas */
+		.indicador.abierto
 		{
 			color: blue;
 		}
 
-		/* Elige todos los elementos con la clase "caja". */
-		.caja
+		/* Selector de identificadores */
+		#titulo
 		{
-			/* Agregar un borde */
-			border: 3px solid black;
+			border: 1px solid black;
+		}
+		
+		/* Selector de atributos */
+		[title="Cargar"]
+		{
+			color: purple;
+		}
+		
+		/* Selectores combinados */
+		a.link[title="Buscar"]
+		{
+			color: green;
+		}
+		
+		/* Mismas reglas para múltiples selectores */
+		div.menu,
+		div#titulo
+		{
+			color: lavender;
 		}
 
-		/* Elige todos los elementos con la clase "abierta". */
-		.abierta
+		/* Selectores de descendientes */
+		.menu .content
 		{
-			/* Color del borde */
-			border-color: green;
+			color: orange;
+		}
+
+		/* Selectores de hijos directos */
+		.menu > .item
+		{
+			border: 1px solid magenta;
+		}
+
+		/* Selectores de hermanos */
+		#titulo + .descripcion
+		{
+			border: 1px solid cyan;
+		}
+
+		/* 
+		Pseudo-clases: reglas que aplican dependiendo
+		del estado del elemento
+
+		Se indican como :nombre-pseudo-clase
+		*/
+
+		/* Cuando se pone el mouse sobre un elemento */
+		.item:hover
+		{
+			border: 5px solid lightgreen;
+		}
+
+		/* Cuando se hace click de un elemento */
+		.item:active
+		{
+			border: 5px solid lightblue;
+		}
+
+		/*
+		Pseudo-elementos: elementos que se pueden
+		agregar desde el CSS
+		*/
+
+		/* Se agrega un elemento antes del contenido del botón */
+		button::before
+		{
+			content: "antes";
+		}
+
+		/* Se agrega un elemento después del contenido del botón */
+		button::after
+		{
+			content: "después";
 		}
 
 	</style>
-
 </body>
 </html>
