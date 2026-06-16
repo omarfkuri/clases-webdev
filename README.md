@@ -9,7 +9,7 @@ git clone https://github.com/omarfkuri/clases-webdev
 
 Cambiar de rama para ver cada clase (la 1 por ejemplo):
 ```
-git checkout parte-1
+git checkout partes/1-sintaxis-de-html
 ```
 
 ## Referencias importantes
