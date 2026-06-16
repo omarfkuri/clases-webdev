@@ -3,60 +3,127 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Emmet</title>
+	<title>Document</title>
 </head>
 <body>
-	
-	<!-- 
-	Emmet (incluido con VSCode)
 
-	Plugin que permite definir plantillas para
-	generar HTML o CSS más rápido.
+	<!--
+	Generar la estructura de abajo con Emmet:
+	
+	.contenedor>((.arriba>.titulo+button.indicador)+.menu>.item*4)
 	-->
-	
-	<!-- div -->
-	<div></div>
 
-	<!-- div+input -->
-	<div></div>
-	<input type="text">
-
-	<!-- div*2 -->
-	<div></div>
-	<div></div>
-
-	<!-- div[attr=jajaja] -->
-	<div attr="jajaja"></div>
-
-	<!-- div>(input+button) -->
-	<div>
-		<input type="text">
-		<button></button>
+	<div class="contenedor closed">
+		<div class="arriba">
+			<div class="titulo">
+				Mi menú
+			</div>
+			<button class="indicador"></button>
+		</div>
+		<div class="menu">
+			<div class="item">Item 1</div>
+			<div class="item">Item 2</div>
+			<div class="item">Item 3</div>
+			<div class="item">Item 4</div>
+		</div>
 	</div>
 
-	<!-- .algo -->
-	<div class="algo"></div>
-
-	<!-- .algo.otra.cosa -->
-	<div class="algo otra cosa"></div>
-
-	<!-- #identificador -->
-	<div id="identificador"></div>
-
 	<style>
-		
-		.algo
+		.contenedor
 		{
-			/*w100*/
-			width: 100px;
+			/*Define el tipo de posicionamiento*/
+			display: flex;
 
-			/*w100p*/
-			width: 100%;
+			/*Dirección de posicionamiento de hijos*/
+			flex-direction: column;
+		}
+		
+		.arriba
+		{
+			display: flex;
+			flex-direction: row;
 
-			/*bd*/
+			/*Como alinear los objectos horizontalmente*/
+			/*center, end, start, space-between, space-around*/
+			justify-content: space-between;
+
+			/*Como alinear los objectos verticalmente*/
+			align-items: center;
+
+			/*Añade espacio a los lados*/
+			padding: 5px;
+
+			border: 1px solid #000;
+
+			background: #444;
+			color: white;
+		}
+
+		.arriba .titulo
+		{
+			font-weight: bold;
+		}
+
+		.arriba .indicador
+		{
+			all: unset;
+			cursor: pointer;
+		}
+
+		.arriba .indicador::after
+		{
+			content: "–";
+		}
+
+		.contenedor.closed .indicador::after
+		{
+			content: "+";
+		}
+
+		.menu
+		{
+			display: flex;
+			flex-direction: column;
+
 			border: 1px solid #000;
 		}
 
+		.contenedor.closed .menu
+		{
+			display: none;
+		}
+
+		.menu .item
+		{
+			padding: 5px;
+			
+			border-bottom: 1px solid #444;
+		}
+
 	</style>
+
+	<script>
+		// Se pueden usar los mismos selectores que en CSS
+		const button = document.querySelector(".indicador");
+
+		button.onclick = function()
+		{
+			const menu = document.querySelector(".contenedor");
+
+			if (menu.classList.contains("closed"))
+			{
+				menu.classList.remove("closed");
+			}
+			else
+			{
+				menu.classList.add("closed");
+			}
+
+			// Lo mismo que lo anterior
+			// menu.classList.toggle("closed");
+		};
+
+	</script>
+
 </body>
 </html>
