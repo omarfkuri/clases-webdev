@@ -1,43 +1,48 @@
-// Primitivos
 
-// null (decir que una var no tiene valor)
-var varNULL = null;
-console.log("NULL", varNULL);
+// Esto es terrible
+console.log(c)
+var c = 5;
 
-// undefined (ocurre cuando un valor no ha sido asignado)
-var unDef = undefined;
-console.log("unDef", unDef);
+// se introduceeee
+// const y let
 
-// number (int o float)
-var number = 0.000059999463;
-console.log("number", number.toExponential(5));
+// alcance
+{
+	var c = 9;
 
-// boolean
-var boolean = false;
-console.log("boolean", false.toString());
+	// debe mostrar 9
+	console.log(a);
+}
+
+// Esperarías 5, pero será 9
+console.log(a);
 
 
-// TDA
+// const no permite asignaciones a la var
+const num = 8;
 
-// string (char o char*)
-var string = "jajajaja";
-console.log("string", string.startsWith("k"));
+// no se permite
+// num += 2;
 
-// array (any[])
-var array = [1, "haha", 9, [], {}];
-console.log("array", array.length);
+const arr = [];
 
-// object
-var object = {
-	propiedad: "Valor",
-	prop: [1, 3, ]
-};
-console.log("object", object);
+// sí permite alterar objeto
+arr.push(4)
+console.log(arr)
 
-// Obtener el tipo de un valor
-console.log(typeof "hello")
-console.log(typeof 99)
-console.log(typeof false)
-console.log(typeof (() => {}))
-console.log(typeof {})
-console.log(Array.isArray([]))
+
+// let define variable mutable
+let a = 5;
+a = 6;
+console.log(a);
+
+// alcance
+{
+	let a = 9;
+
+	// debe mostrar 9
+	console.log(a);
+}
+
+// debe mostrar 6
+console.log(a);
