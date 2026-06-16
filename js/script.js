@@ -1,24 +1,35 @@
-// Al definir el script como type="module"
-// se habilita la palabra `await`. Esta permite
-// esperar a que una promesa se complete,
-// lo cual permite escribir código que puede tomar tiempo
-// de una manera secuencial.
+// window: Window
+// Este objeto contiene todos
+// los objetos disponibles en el API
+// de la web.
+console.log(window);
 
-const api = 'https://jsonplaceholder.typicode.com/todos/1';
+// No se tiene que referenciar
+// window, pues se tiene acceso a todas las
+// props de window directamente.
+console.log(alert, window.alert);
 
-try 
-{
-	// Respuesta no contiene una promesa, si
-	// no el resultado de la misma
-	const respuesta = await fetch(api);
+// DOM
+// Document Object Model
+// Este modelo representa el árbol de contenido
+// dentro de la página web.
+console.log(document, window.document);
 
-	// El objeto aquí ya está analizado
-	const obj = await respuesta.json();
+// TODO es un NODO (Node)
+// y el DOM está compuesto de ellos.
+console.log(Node);
 
-	console.log(obj);
-}
-// Se ejecuta si ocurre un error
-catch(err)
-{
-	console.log(err);
-}
+/*
+Jerarquía de clases
+
+Node
+	Text
+	Element
+
+Element
+	HTMLElement
+		HTMLDivElement
+		HTMLAnchorElement
+		HTMLHeadingElement
+*/
+
