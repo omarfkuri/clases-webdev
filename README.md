@@ -4,7 +4,7 @@
 
 Clonar el repo:
 ```
-git clone https://github.com/omarfkuri/roque
+git clone https://github.com/omarfkuri/clases-webdev
 ```
 
 Cambiar de rama para ver cada clase (la 1 por ejemplo):
