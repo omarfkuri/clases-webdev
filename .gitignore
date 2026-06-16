@@ -1,0 +1,13 @@
+# En este archivo se colocan
+# patrones que indican qué
+# archivos se deben ignorar
+# en el historial de versiones
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de editor
+*.sublime-*
+.vscode
+.idea
