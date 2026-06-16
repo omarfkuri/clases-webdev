@@ -1,48 +1,47 @@
 
-// Esto es terrible
-console.log(c)
-var c = 5;
-
-// se introduceeee
-// const y let
-
-// alcance
+// Función con nombre
+function suma(a, b)
 {
-	var c = 9;
-
-	// debe mostrar 9
-	console.log(a);
+	return a + b;
 }
 
-// Esperarías 5, pero será 9
-console.log(a);
-
-
-// const no permite asignaciones a la var
-const num = 8;
-
-// no se permite
-// num += 2;
-
-const arr = [];
-
-// sí permite alterar objeto
-arr.push(4)
-console.log(arr)
-
-
-// let define variable mutable
-let a = 5;
-a = 6;
-console.log(a);
-
-// alcance
+// Función anónima
+const resta = function(a, b)
 {
-	let a = 9;
+	return a - b;
+};
 
-	// debe mostrar 9
-	console.log(a);
-}
+// Función anónima de una sola expresión
+const mult = (a, b) => a * b;
 
-// debe mostrar 6
-console.log(a);
+// Función anónima
+const div = (a, b) =>
+{
+	if (b == 0)
+		return 0;
+
+	return a / b;
+};
+
+// Función anónima de un solo parámetro
+const cuadrado = n => n * n;
+
+// Las funciones anónimas se usan
+// para pasar funciones como parámetros
+// cuando no nos interesa reutilizar
+// la función en otros casos.
+
+const califs = [9, 9, 9, 6, 7, 5];
+
+// Buscar un elemento en un arreglo
+const x = califs.find((n) => n == 5);
+console.log(x)
+
+// Afectar cada elemento del arreglo
+// y regresar un arreglo con estos
+// cambios hechos
+const califCadena = califs.map((n) => {
+	
+	return n.toString();
+});
+console.log(califCadena)
