@@ -3,45 +3,42 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sintaxis de CSS</title>
+	<title>Clases e identificadores</title>
 </head>
 <body>
 	<div>
-		<h1>Hola</h1>
-		<p>Esto es un párrafo</p>
+		
+		<!-- Los identificadores le dan un nombre único a un elemento. -->
+		<div id="uno">Hola</div>
+		
+		<!-- Las clases agrupan varios elementos bajo una propiedad compartida. -->
+		<div class="caja">Caja uno</div>
+
+		<!-- Pueden tener más de una clase -->
+		<div class="caja abierta">Caja dos</div>
+
 	</div>
 
-	<!-- Estilos -->
 	<style>
 
-		/*
-			Sintáxis básica de CSS
-
-			// El selector indica a qué elemento se
-			// le aplicarán los estilos
-
-			selector
-			{
-				// Cada propiedad define un aspecto del
-				// estilo de un elemento
-
-				nombrePropiedad: valor;
-				...
-			}
-		*/
-
-		/* Elige todos los elementos de tipo "h1". */
-		h1
+		/* Elige el elemento con el identificador "uno". */
+		#uno
 		{
-			/* Color del texto */
-			color: red;
+			color: blue;
 		}
 
-		/* Elige todos los elementos de tipo "p". */
-		p
+		/* Elige todos los elementos con la clase "caja". */
+		.caja
 		{
-			/* Color del texto */
-			color: blue;
+			/* Agregar un borde */
+			border: 3px solid black;
+		}
+
+		/* Elige todos los elementos con la clase "abierta". */
+		.abierta
+		{
+			/* Color del borde */
+			border-color: green;
 		}
 
 	</style>
