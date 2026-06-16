@@ -1,47 +1,79 @@
-
-// Función con nombre
-function suma(a, b)
+class Persona
 {
-	return a + b;
+	constructor(nombre, apellido)
+	{
+		this.nombre = nombre;
+		this.apellido = apellido;
+	}
+
+	// Método de instancia
+	decirHola()
+	{
+		console.log(this.nombre, "dice hola")
+	}
+
+	// Método de clase
+	static decirAdios()
+	{
+		console.log("Adiós");
+	}
 }
 
-// Función anónima
-const resta = function(a, b)
+// Para crear instancias de clase, utilizar new
+const dan = new Persona("Daniel", "De La Cruz");
+console.log(dan);
+dan.decirHola();
+
+Persona.decirAdios();
+
+class Empleado extends Persona
 {
-	return a - b;
-};
+	// Variable de instancia
+	id = "jkahslkfhas"
 
-// Función anónima de una sola expresión
-const mult = (a, b) => a * b;
+	// Solo accesible dentro de la clase
+	#priv = 333;
 
-// Función anónima
-const div = (a, b) =>
+	// Si no se define constructor,
+	// se hereda el del padre
+	constructor(id, nombre, apellido)
+	{
+		super(nombre, apellido)
+
+		// Si no se asigna el valor,
+		// se queda el asignado anteriormente
+		this.id = id;
+	}
+
+	decirCodigoPrivado()
+	{
+		console.log(this.#priv);
+	}
+}
+
+const luis = new Empleado(893257, "luis", "rodriguez");
+console.log(luis);
+luis.decirCodigoPrivado();
+
+// Siendo objetos, se pueden agregar propiedades
+luis.colonia = "Malamuerte (Santocho)";
+console.log(luis);
+
+
+// Las clases son azúcar sintáctica para:
+
+function PersonFun(nombre, apellido)
 {
-	if (b == 0)
-		return 0;
+	return {
+		nombre: nombre,
+		apellido: apellido,
 
-	return a / b;
-};
+		decirHola()
+		{
+			console.log(this.nombre, "dice hola");
+		}
+	}
+}
 
-// Función anónima de un solo parámetro
-const cuadrado = n => n * n;
-
-// Las funciones anónimas se usan
-// para pasar funciones como parámetros
-// cuando no nos interesa reutilizar
-// la función en otros casos.
-
-const califs = [9, 9, 9, 6, 7, 5];
-
-// Buscar un elemento en un arreglo
-const x = califs.find((n) => n == 5);
-console.log(x)
-
-// Afectar cada elemento del arreglo
-// y regresar un arreglo con estos
-// cambios hechos
-const califCadena = califs.map((n) => {
-	
-	return n.toString();
-});
-console.log(califCadena)
+const per = PersonFun("Marco", "Martínez");
+console.log(per);
