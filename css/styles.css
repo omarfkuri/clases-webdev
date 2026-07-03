@@ -4,72 +4,30 @@
 	box-sizing: border-box;
 }
 
+.padre
+{
+	border: 1px solid red;
+	width: min-content;
+
+	/* en vez de margen en hijo, padding en padre */
+	/*padding: 10px;*/
+}
+
 .caja
 {
-	border: 5px solid #000;
-}
+	background: blue;
+	color: white;
 
-.pixeles
-{
-	width: 100px;
-	height: 100px;
-}
+	border: 16px solid orange;
 
-.contenedor
-{
-	width: 200px;
-	height: 300px;
-	border: 5px solid blue;
-}
+	/* espacio entre contenido y borde */
+	padding: 10px;
+	
+	/* espacio entre borde y el padre */
+	margin: 10px;
 
-/* Porciento se basa en el padre */
-.porciento
-{
-	width: 75%;
-	height: 50%;
-}
 
-.em
-{
-	font-size: 24px;
-}
-
-/* tamaño basado en la fuente del padre */
-.em .hijo
-{
-	font-size: 1.5em;
-}
-
-/* tamaño mínimo para contener el contenido */
-.mc
-{
 	width: min-content;
-}
-
-/* tamaño basado en caracteres de longitud */
-.caracter
-{
-	width: 24ch;
-	height: 7ch;
-}
-
-/* unidades relativas al ancho de la vista */
-.vista-ancho
-{
-	width: 50vw;
-	height: 20vw;
-}
-
-/* unidades relativas al altura de la vista */
-.vista-altura
-{
-	width: 50vh;
-	height: 20vh;
-}
-
-/* unidades relativas a la vista dependiendo de los cambios (mobile) */
-.vista-dinamica
-{
-	width: 50dvw;
-	height: 20dvh;
+	white-space: nowrap;
+	height: auto;
 }
