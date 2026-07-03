@@ -1,0 +1,49 @@
+
+/* initial, inherit, unset, reset, none */
+
+body
+{
+	/* regresa a los estilos del motor */
+	color: initial;
+}
+
+.padre
+{
+	color: red;
+}
+
+.hijo
+{
+	/* hereda del padre (es el default) */
+	color: inherit;
+}
+
+button
+{
+	color: red;
+}
+
+button
+{
+	/* all: unset; */
+	/* quita los estilos */
+	color: unset;
+}
+
+a
+{
+	color: gold;
+}
+
+a
+{
+	/* regresa a estilos del agente */
+	color: revert;
+}
+
+
+.hola
+{
+	/* quita la propiedad */
+	display: none;
+}
