@@ -5,22 +5,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<link rel="stylesheet" href="/css/styles.css">
-		<title>Back to basics - CSS</title>
+		<title>Especificidad</title>
 	</head>
 	
 	<body>
 
-		<div class="padre">
-			<div class="hijo">
-				Hola
-			</div>
+		<div id="contenedor" class="clase3">
+			<!-- Estilos en linea tienen mayor especificidad que los ids -->
+			<h1
+				id="titulo"
+				class="clase1 clase2"
+				style="color: burlywood;"
+
+			>Cascading Style Sheets</h1>
 		</div>
-
-		<button>Click</button>
-
-		<a href="/">Link</a>
-
-		<div class="hola">Hola mundo</div>
 
 	</body>
 </html>

@@ -1,49 +1,59 @@
+/*
+Si es el mismo selector, se utiliza el último
+en declararse.
 
-/* initial, inherit, unset, reset, none */
+Si son diferentes y aplican al mismo elemento,
+se ordenan:
 
-body
+orden de importancia -> mayor a menor
+
+(# de ids, # de clases, # de elementos)
+
+ids: #identificador
+clases: .clase .otro .com.bi.na.das, :hover
+
+Utilizar !important te regresa al orden de declaración
+*/
+
+#contenedor #titulo
 {
-	/* regresa a los estilos del motor */
-	color: initial;
+	color: blue;
 }
 
-.padre
+#titulo
 {
-	color: red;
+	color: purple;
 }
 
-.hijo
+.clase3 .clase1:hover
 {
-	/* hereda del padre (es el default) */
-	color: inherit;
+	font-family: Arial;
 }
 
-button
+.clase1.clase2
 {
-	color: red;
+	font-family: Impact;
 }
 
-button
+.clase1
 {
-	/* all: unset; */
-	/* quita los estilos */
-	color: unset;
+	font-family: Times New Roman;
 }
 
-a
+div h1
 {
 	color: gold;
+	background-color: orange;
 }
 
-a
+h1
 {
-	/* regresa a estilos del agente */
-	color: revert;
+	color: green !important;
+	background-color: red;
 }
 
-
-.hola
+h1
 {
-	/* quita la propiedad */
-	display: none;
+	color: lightgrey !important;
+	background-color: red;
 }
