@@ -1,59 +1,75 @@
-/*
-Si es el mismo selector, se utiliza el último
-en declararse.
-
-Si son diferentes y aplican al mismo elemento,
-se ordenan:
-
-orden de importancia -> mayor a menor
-
-(# de ids, # de clases, # de elementos)
-
-ids: #identificador
-clases: .clase .otro .com.bi.na.das, :hover
-
-Utilizar !important te regresa al orden de declaración
-*/
-
-#contenedor #titulo
+*
 {
-	color: blue;
+	/* Para que los hijos no incluyan el borde en el tamaño al heredar */
+	box-sizing: border-box;
 }
 
-#titulo
+.caja
 {
-	color: purple;
+	border: 5px solid #000;
 }
 
-.clase3 .clase1:hover
+.pixeles
 {
-	font-family: Arial;
+	width: 100px;
+	height: 100px;
 }
 
-.clase1.clase2
+.contenedor
 {
-	font-family: Impact;
+	width: 200px;
+	height: 300px;
+	border: 5px solid blue;
 }
 
-.clase1
+/* Porciento se basa en el padre */
+.porciento
 {
-	font-family: Times New Roman;
+	width: 75%;
+	height: 50%;
 }
 
-div h1
+.em
 {
-	color: gold;
-	background-color: orange;
+	font-size: 24px;
 }
 
-h1
+/* tamaño basado en la fuente del padre */
+.em .hijo
 {
-	color: green !important;
-	background-color: red;
+	font-size: 1.5em;
 }
 
-h1
+/* tamaño mínimo para contener el contenido */
+.mc
 {
-	color: lightgrey !important;
-	background-color: red;
+	width: min-content;
+}
+
+/* tamaño basado en caracteres de longitud */
+.caracter
+{
+	width: 24ch;
+	height: 7ch;
+}
+
+/* unidades relativas al ancho de la vista */
+.vista-ancho
+{
+	width: 50vw;
+	height: 20vw;
+}
+
+/* unidades relativas al altura de la vista */
+.vista-altura
+{
+	width: 50vh;
+	height: 20vh;
+}
+
+/* unidades relativas a la vista dependiendo de los cambios (mobile) */
+.vista-dinamica
+{
+	width: 50dvw;
+	height: 20dvh;
 }
