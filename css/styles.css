@@ -1,16 +1,16 @@
 *
 {
-	/* Para que los hijos no incluyan el borde en el tamaño al heredar */
 	box-sizing: border-box;
 }
 
 .padre
 {
 	border: 1px solid red;
-	width: min-content;
+	
+	width: 200px;
+	height: 200px;
 
-	/* en vez de margen en hijo, padding en padre */
-	/*padding: 10px;*/
+	position: static;
 }
 
 .caja
@@ -18,16 +18,50 @@
 	background: blue;
 	color: white;
 
-	border: 16px solid orange;
+	border: 3px solid orange;
 
-	/* espacio entre contenido y borde */
-	padding: 10px;
-	
-	/* espacio entre borde y el padre */
-	margin: 10px;
+	width: 80px;
+	height: 80px;
+}
 
 
-	width: min-content;
-	white-space: nowrap;
-	height: auto;
+.relativa
+{
+	/* relativo a la posición en la que debería estar */
+	position: relative;
+	top: 10px;
+	left: 250px;
+}
+
+.padre-relativo
+{
+	/* Requerido en un padre de un elemento absoluto
+	para que el hijo se posicione relativo a el */
+	position: relative;
+}
+
+.absoluta
+{
+	/* relativo al padre que tenga posición relativa */
+	position: absolute;
+	top: 10px;
+	left: 250px;
+}
+
+.fija
+{
+	/* Se fija a la vista (si no se pone top o left se 
+	queda donde estaba al principio) */
+	position: fixed;
+	top: 20px;
+	left: 150px;
+}
+
+.pegajosa
+{
+	/* Es static hasta que llega a la distancia definida
+	por top o left dependiendo del scroll en el padre
+	 */
+	position: sticky;
+	top: 20px;
 }
